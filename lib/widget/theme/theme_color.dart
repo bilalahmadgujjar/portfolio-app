@@ -5,6 +5,9 @@ class AppTheme {
   static Color disabledColor = const Color(0xFFF9F9F9); //Color(0xFFF6F5F5);
   static Color disabledColor2 = const Color(0xFFB0B0B0);
   static Color textColor = Colors.black87;
+  static Color cardColor = Color(0xFF18213B);
+  static Color emailCardColor= Color(0xFF273454);
+  static Color facebookColor = Color(0xFF1877F2);
 
   // Dark Theme Colors
   //static Color darkPrimaryColor = const Color(0xFF111015);

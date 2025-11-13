@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:portfolio/screens/homepage/homepage.dart';
-import 'package:portfolio/widget/theme.dart';
-import 'package:portfolio/widget/theme_color.dart';
+import 'package:portfolio/widget/theme/theme.dart';
+import 'package:portfolio/widget/theme/theme_color.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
           statusBarColor: AppTheme.brownColor,
-          statusBarIconBrightness: Brightness.light,
+          statusBarIconBrightness: Brightness.dark,
           statusBarBrightness: Brightness.dark,
 
           ///=========================================================================

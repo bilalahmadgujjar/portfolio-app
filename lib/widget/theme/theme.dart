@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/widget/theme_color.dart';
+import 'package:portfolio/widget/theme/theme_color.dart';
 
 /// ✅ LIGHT THEME
 final ThemeData lightTheme = ThemeData(
