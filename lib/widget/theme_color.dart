@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  // Light Theme Colors
-
-  static Color primaryColor = const Color(0xff3C2F2F);
   static Color backgroundColor = Colors.white;
   static Color disabledColor = const Color(0xFFF9F9F9); //Color(0xFFF6F5F5);
   static Color disabledColor2 = const Color(0xFFB0B0B0);
@@ -31,4 +28,8 @@ class AppTheme {
   static Color greenColor = const Color(0xFF7DD87D); //Colors.green;
   static Color whatsappColor = const Color(0XFF25D366);
   static Color polylineColor = const Color(0xFFAF1EEC);
+
+  static Color brownColor = const Color(0xFF543233);
+  static Color navyColor = const Color(0xFF091021);
+  static Color deepColor = const Color(0xFF150035);
 }

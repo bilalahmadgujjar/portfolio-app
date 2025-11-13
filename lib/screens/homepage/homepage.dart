@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 
+import '../../widget/theme_color.dart';
+
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Container(
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFF543233), // reddish tint top
-              Color(0xFF0D1021), // deep navy mid
-              Color(0xFF150035), // purple base
+              AppTheme.brownColor,
+              AppTheme.navyColor,
+              AppTheme.deepColor,
             ],
-            stops: [-2, 0.35, 1.0],
+            stops: [-2, 0.35, 6],
           ),
         ),
       ),
