@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widget/theme_color.dart';
+
 /// ✅ LIGHT THEME
 final ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
-  scaffoldBackgroundColor: Colors.white,
+  scaffoldBackgroundColor: AppTheme.backgroundColor,
   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-  appBarTheme: const AppBarTheme(
-    backgroundColor: Colors.white,
-    foregroundColor: Colors.black,
+  appBarTheme: AppBarTheme(
+    backgroundColor: AppTheme.backgroundColor,
+    foregroundColor: AppTheme.blackColor,
     elevation: 0,
   ),
-  textTheme: const TextTheme(
-    bodyLarge: TextStyle(color: Colors.black87),
-    bodyMedium: TextStyle(color: Colors.black87),
+  textTheme: TextTheme(
+    bodyLarge: TextStyle(color: AppTheme.textColor),
+    bodyMedium: TextStyle(color: AppTheme.textColor),
   ),
   useMaterial3: true,
 );
@@ -19,19 +21,19 @@ final ThemeData lightTheme = ThemeData(
 /// ✅ DARK THEME
 final ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
-  scaffoldBackgroundColor: const Color(0xFF121212),
+  scaffoldBackgroundColor: AppTheme.darkBackgroundColor,
   colorScheme: ColorScheme.fromSeed(
     seedColor: Colors.deepPurple,
     brightness: Brightness.dark,
   ),
-  appBarTheme: const AppBarTheme(
-    backgroundColor: Color(0xFF1F1F1F),
-    foregroundColor: Colors.white,
+  appBarTheme: AppBarTheme(
+    backgroundColor: AppTheme.darkAppBarColor,
+    foregroundColor: AppTheme.backgroundColor,
     elevation: 0,
   ),
-  textTheme: const TextTheme(
-    bodyLarge: TextStyle(color: Colors.white70),
-    bodyMedium: TextStyle(color: Colors.white70),
+  textTheme: TextTheme(
+    bodyLarge: TextStyle(color: AppTheme.darkTextColor),
+    bodyMedium: TextStyle(color: AppTheme.darkTextColor),
   ),
   useMaterial3: true,
 );
