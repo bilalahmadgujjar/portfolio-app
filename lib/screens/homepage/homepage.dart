@@ -40,13 +40,13 @@ class Homepage extends StatelessWidget {
                         horizontal: screenWidth(context) * 4,
                         vertical: screenHeight(context) * 2),
                     decoration: BoxDecoration(
-                      color: AppTheme.cardColor,
+                      color: AppTheme.cardColor.withOpacity(0.4),
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: screenHeight(context) * 14),
+                        SizedBox(height: screenHeight(context) * 12),
                         Center(
                           child: text(
                             text: 'Muhammad Bilal Ahmad',
@@ -96,7 +96,7 @@ class Homepage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: screenHeight(context) * 2),
+                        SizedBox(height: screenHeight(context) * 3),
                       ],
                     ),
                   ),
@@ -162,7 +162,7 @@ class Homepage extends StatelessWidget {
           ),
 
           ///=====================Card Image =====================
-          // Avatar
+
           Positioned(
             left: screenWidth(context) * 35,
             top: screenHeight(context) * 10,
@@ -181,6 +181,8 @@ class Homepage extends StatelessWidget {
               ),
             ),
           ),
+
+
         ],
       ),
     );
