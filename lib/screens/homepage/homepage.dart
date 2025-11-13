@@ -1,32 +1,3 @@
-// import 'package:flutter/material.dart';
-//
-// import '../../widget/theme_color.dart';
-//
-// class Homepage extends StatelessWidget {
-//   const Homepage({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.transparent,
-//       body: Container(
-//         decoration:  BoxDecoration(
-//           gradient: LinearGradient(
-//             begin: Alignment.topLeft,
-//             end: Alignment.bottomCenter,
-//             colors: [
-//               AppTheme.brownColor,
-//               AppTheme.navyColor,
-//               AppTheme.deepColor,
-//             ],
-//             stops: [-2, 0.35, 6],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/responsiveness.dart';
 import 'package:portfolio/widget/text.dart';
@@ -73,49 +44,38 @@ class Homepage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(height: screenHeight(context) * 14),
-                        text(
-                          text: 'Muhammad Bilal Ahmad',
-                          textColor: AppTheme.whiteColor,
-                          fontWeight: FontWeight.bold,
-                          fontSize: screenWidth(context) * 6,
+                        Center(
+                          child: text(
+                            text: 'Muhammad Bilal Ahmad',
+                            textColor: AppTheme.whiteColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: screenWidth(context) * 6,
+                          ),
                         ),
-                        SizedBox(height: screenHeight(context) * 1.5),
-                        text(
-                          text: '@bialtech271',
-                          textColor: AppTheme.darkTextColor,
-                          fontSize: screenWidth(context) * 4,
-                        ),
-                        SizedBox(height: screenHeight(context) * 1),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.calendar_today,
-                                color: AppTheme.redColor,
-                                size: screenWidth(context) * 4),
-                            SizedBox(width: screenWidth(context) * 1.5),
-                            text(
-                              text: '17.09.2002',
-                              textColor: AppTheme.darkTextColor,
-                              fontSize: screenWidth(context) * 3.5,
-                            ),
-                          ],
+                        SizedBox(height: screenHeight(context) * 0.5),
+                        Center(
+                          child: text(
+                            text: '@bialtech271',
+                            textColor: AppTheme.darkTextColor,
+                            fontSize: screenWidth(context) * 4,
+                          ),
                         ),
                         SizedBox(height: screenHeight(context) * 2),
                         text(
                           text:
-                              '🔸 Flutter Developer\n💡 Day by Day | Design Wizard by Night.',
+                              '   🔸17.09.2002\n   🔸Flutter Developer\n   💡 Day by Day | Design Wizard by Night.',
                           textColor: AppTheme.darkTextColor,
-                          textAlign: TextAlign.center,
                           tightHeight: 1.5,
                           fontSize: screenWidth(context) * 3.5,
                         ),
-                        SizedBox(height: screenHeight(context) * 2),
+                        SizedBox(height: screenHeight(context) * 4),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Icon(Icons.location_on,
+                            Icon(Icons.location_on_outlined,
                                 color: AppTheme.darkTextColor,
                                 size: screenWidth(context) * 4),
                             SizedBox(width: screenWidth(context) * 1.5),
@@ -130,7 +90,7 @@ class Homepage extends StatelessWidget {
                                 size: screenWidth(context) * 4.5),
                             SizedBox(width: screenWidth(context) * 1.5),
                             text(
-                              text: 'Joined on Jul 28, 2024',
+                              text: 'Joined on July 28, 2024',
                               textColor: AppTheme.darkTextColor,
                               fontSize: screenWidth(context) * 3.5,
                             ),
