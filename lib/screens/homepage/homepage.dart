@@ -105,24 +105,39 @@ class Homepage extends StatelessWidget {
                   SizedBox(height: screenHeight(context) * 2),
 
                   Expanded(
-                    child: ListView(
-                      shrinkWrap: true,
-                      children: [
+                    child: Container(
+                      color: AppTheme.whiteColor,
+                      child: ListView(
+                        padding: EdgeInsets.symmetric(horizontal: screenWidth(context)*4,vertical: screenHeight(context)*1),
+                        shrinkWrap: true,
+                        children: [
 
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            ContainerWidget(title: 'Email',body:'bilaltech271@gmail.com', icon:'assets/mail.svg',
-                            cardColor: AppTheme.emailCardColor,
-                            ),
-                            SizedBox(
-                              width: screenWidth(context) * 4,
-                            ),
-                          ContainerWidget(title: 'Facebook',body:'bilalahmad', icon:'assets/facebook.svg',cardColor: AppTheme.facebookColor ),
+                          Row(
+                            children: [
+                              Expanded(
+                                flex:2,
+                                child: ContainerWidget(
+                                  title: 'Email',
+                                  body: 'bilaltech271@gmail.com',
+                                  icon: 'assets/mail.svg',
+                                  cardColor: AppTheme.emailCardColor,
+                                ),
+                              ),
+                              SizedBox(width: screenWidth(context) * 2), // small gap
+                              Expanded(
+                                child: ContainerWidget(
+                                  title: 'Facebook',
+                                  body: 'bilalahmad',
+                                  icon: 'assets/facebook.svg',
+                                  cardColor: AppTheme.facebookColor,
+                                ),
+                              ),
+                            ],
+                          )
 
-                          ],
-                        ),
-                      ],
+
+                        ],
+                      ),
                     ),
                   )
 
