@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/utils/responsiveness.dart';
 import 'package:portfolio/widget/text.dart';
 
+import '../../widget/card_widget.dart';
 import '../../widget/theme/theme_color.dart';
 
 class Homepage extends StatelessWidget {
@@ -34,6 +35,7 @@ class Homepage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // Profile Card
+                  SizedBox(height: screenHeight(context)*17,),
                   Container(
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(
@@ -58,7 +60,7 @@ class Homepage extends StatelessWidget {
                         SizedBox(height: screenHeight(context) * 0.5),
                         Center(
                           child: text(
-                            text: '@bialtech271',
+                            text: '@bilalahmad',
                             textColor: AppTheme.darkTextColor,
                             fontSize: screenWidth(context) * 4,
                           ),
@@ -102,60 +104,28 @@ class Homepage extends StatelessWidget {
                   ),
                   SizedBox(height: screenHeight(context) * 2),
 
-                  // Bottom Buttons
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // Email Card
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: screenWidth(context) * 4,
-                            vertical: screenHeight(context) * 2),
-                        decoration: BoxDecoration(
-                          color: AppTheme.emailCardColor,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Column(
+                  Expanded(
+                    child: ListView(
+                      shrinkWrap: true,
+                      children: [
+
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.email, color: AppTheme.whiteColor),
-                            SizedBox(height: screenHeight(context) * 0.6),
-                            text(
-                              text: 'bilaltech271@gmail.com',
-                              textColor: AppTheme.darkTextColor,
-                              textAlign: TextAlign.center,
-                              fontSize: screenWidth(context) * 2.8,
+                            ContainerWidget(title: 'Email',body:'bilaltech271@gmail.com', icon:'assets/mail.svg',
+                            cardColor: AppTheme.emailCardColor,
                             ),
+                            SizedBox(
+                              width: screenWidth(context) * 4,
+                            ),
+                          ContainerWidget(title: 'Facebook',body:'bilalahmad', icon:'assets/facebook.svg',cardColor: AppTheme.facebookColor ),
+
                           ],
                         ),
-                      ),
-                      SizedBox(
-                        width: screenWidth(context) * 4,
-                      ),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: screenWidth(context) * 4,
-                            vertical: screenHeight(context) * 2),
-                        decoration: BoxDecoration(
-                          color: AppTheme.facebookColor,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.facebook, color: AppTheme.whiteColor),
-                            SizedBox(height: screenHeight(context) * 0.6),
-                            text(
-                              text: 'Muhammad Bilal Ahmad',
-                              textColor: AppTheme.darkTextColor,
-                              textAlign: TextAlign.center,
-                              fontSize: screenWidth(context) * 2.8,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
+                  )
+
                 ],
               ),
             ),
@@ -181,10 +151,10 @@ class Homepage extends StatelessWidget {
               ),
             ),
           ),
-
-
         ],
       ),
     );
   }
 }
+
+
