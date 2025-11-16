@@ -9,7 +9,7 @@ class AppTheme {
   static Color emailCardColor = const Color(0xFF143061);
   static Color facebookColor = const Color(0xFF278BE4);
   static Color githubColor = const Color(0xFF20212A);
-  static Color figmaColor = const Color(0xFF2D2C2C);
+  static Color figmaColor = const Color(0xFF302F2F);
   static Color devColor = const Color(0xFFEEEEEE);
 
   // Dark Theme Colors

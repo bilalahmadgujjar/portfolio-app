@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:portfolio/widget/text.dart';
@@ -10,6 +9,7 @@ class ContainerWidget extends StatelessWidget {
   final String body;
   final String icon;
   final Color cardColor;
+  final bool isDev;
 
   const ContainerWidget({
     super.key,
@@ -17,6 +17,7 @@ class ContainerWidget extends StatelessWidget {
     required this.body,
     required this.icon,
     required this.cardColor,
+    this.isDev = false,
   });
 
   @override
@@ -37,35 +38,38 @@ class ContainerWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SvgPicture.asset(icon,height: screenHeight(context)*6,),
-
+            SvgPicture.asset(
+                      icon,
+                      height: screenHeight(context) * 6,
+                    ),
               SizedBox(height: screenHeight(context) * 1),
-
               text(
                 text: title,
-                textColor: AppTheme.whiteColor,
+                textColor: isDev==true?AppTheme.githubColor: AppTheme.whiteColor,
                 fontSize: screenWidth(context) * 4,
                 fontWeight: FontWeight.bold,
               ),
-
               SizedBox(height: screenHeight(context) * 0.5),
-
               text(
                 text: body,
-                textColor: AppTheme.whiteColor,
+                textColor: isDev==true?AppTheme.githubColor: AppTheme.whiteColor,
                 fontSize: screenWidth(context) * 3,
               ),
             ],
           ),
         ),
-
-        Positioned(
-          top: screenHeight(context) *2,
+      isDev==true?
+      Positioned(
+        top: screenHeight(context) * 2,
+        right: screenWidth(context) * 4,
+        child: SvgPicture.asset('assets/redirect.svg',
+          colorFilter:ColorFilter.mode(AppTheme.githubColor, BlendMode.srcIn),),
+      ):Positioned(
+          top: screenHeight(context) * 2,
           right: screenWidth(context) * 4,
-          child: SvgPicture.asset('assets/redirect.svg' ),
+          child: SvgPicture.asset('assets/redirect.svg'),
         ),
       ],
     );
   }
 }
-

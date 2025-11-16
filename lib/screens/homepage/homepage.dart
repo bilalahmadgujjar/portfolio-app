@@ -35,7 +35,9 @@ class Homepage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // Profile Card
-                  SizedBox(height: screenHeight(context)*17,),
+                  SizedBox(
+                    height: screenHeight(context) * 17,
+                  ),
                   Container(
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(
@@ -105,42 +107,80 @@ class Homepage extends StatelessWidget {
                   SizedBox(height: screenHeight(context) * 2),
 
                   Expanded(
-                    child: Container(
-                      color: AppTheme.whiteColor,
-                      child: ListView(
-                        padding: EdgeInsets.symmetric(horizontal: screenWidth(context)*4,vertical: screenHeight(context)*1),
-                        shrinkWrap: true,
-                        children: [
-
-                          Row(
-                            children: [
-                              Expanded(
-                                flex:2,
-                                child: ContainerWidget(
-                                  title: 'Email',
-                                  body: 'bilaltech271@gmail.com',
-                                  icon: 'assets/mail.svg',
-                                  cardColor: AppTheme.emailCardColor,
-                                ),
+                    child: ListView(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: screenWidth(context) * 4,
+                          vertical: screenHeight(context) * 1),
+                      shrinkWrap: true,
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: ContainerWidget(
+                                title: 'Email',
+                                body: 'bilaltech271@gmail.com',
+                                icon: 'assets/mail.svg',
+                                cardColor: AppTheme.emailCardColor,
                               ),
-                              SizedBox(width: screenWidth(context) * 2), // small gap
-                              Expanded(
-                                child: ContainerWidget(
-                                  title: 'Facebook',
-                                  body: 'bilalahmad',
-                                  icon: 'assets/facebook.svg',
-                                  cardColor: AppTheme.facebookColor,
-                                ),
+                            ),
+                            SizedBox(
+                                width: screenWidth(context) * 2), // small gap
+                            Expanded(
+                              child: ContainerWidget(
+                                title: 'Facebook',
+                                body: '@bilalahmad',
+                                icon: 'assets/facebook.svg',
+                                cardColor: AppTheme.facebookColor,
                               ),
-                            ],
-                          )
-
-
-                        ],
-                      ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: screenHeight(context) * 1,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: ContainerWidget(
+                                title: 'GitHub',
+                                body: '@bilalahmadgujjar',
+                                icon: 'assets/git.svg',
+                                cardColor: AppTheme.githubColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: screenHeight(context) * 1,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 2,
+                              child: ContainerWidget(
+                                title: 'Figma',
+                                body: '@bilalahmad',
+                                icon: 'assets/figma.svg',
+                                cardColor: AppTheme.figmaColor,
+                              ),
+                            ),
+                            SizedBox(
+                                width: screenWidth(context) * 2), // small gap
+                            Expanded(
+                              child: ContainerWidget(
+                                title: 'Developer',
+                                body: '@bilalahmad',
+                                isDev: true,
+                                icon: 'assets/dev.svg',
+                                cardColor: AppTheme.devColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   )
-
                 ],
               ),
             ),
@@ -171,5 +211,3 @@ class Homepage extends StatelessWidget {
     );
   }
 }
-
-
