@@ -11,6 +11,7 @@ class AppTheme {
   static Color githubColor = const Color(0xFF20212A);
   static Color figmaColor = const Color(0xFF302F2F);
   static Color devColor = const Color(0xFFEEEEEE);
+  static Color picColor = const Color(0xFFFFB829);
 
   // Dark Theme Colors
   //static Color darkPrimaryColor = const Color(0xFF111015);

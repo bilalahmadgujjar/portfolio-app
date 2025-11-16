@@ -195,6 +195,7 @@ class Homepage extends StatelessWidget {
               width: screenWidth(context) * 38,
               height: screenHeight(context) * 18,
               decoration: BoxDecoration(
+                color: AppTheme.picColor,
                 borderRadius: BorderRadius.circular(25),
               ),
               child: ClipRRect(
