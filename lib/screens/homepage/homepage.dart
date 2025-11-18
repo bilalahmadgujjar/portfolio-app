@@ -122,6 +122,8 @@ class Homepage extends StatelessWidget {
                                 body: 'bilaltech271@gmail.com',
                                 icon: 'assets/mail.svg',
                                 cardColor: AppTheme.emailCardColor,
+                                posTop: screenHeight(context) * 2,
+                                posLeft: screenWidth(context) * 4,
                               ),
                             ),
                             SizedBox(
@@ -132,6 +134,8 @@ class Homepage extends StatelessWidget {
                                 body: '@bilalahmad',
                                 icon: 'assets/facebook.svg',
                                 cardColor: AppTheme.facebookColor,
+                                posTop: screenHeight(context) * 0.5,
+                                posLeft: screenWidth(context) * 1,
                               ),
                             ),
                           ],
@@ -147,6 +151,9 @@ class Homepage extends StatelessWidget {
                                 body: '@bilalahmadgujjar',
                                 icon: 'assets/git.svg',
                                 cardColor: AppTheme.githubColor,
+                                posTop: screenHeight(context) * 1,
+                                posLeft: screenWidth(context) * 2,
+                                isGit: true,
                               ),
                             ),
                           ],
@@ -163,12 +170,16 @@ class Homepage extends StatelessWidget {
                                 body: '@bilalahmad',
                                 icon: 'assets/figma.svg',
                                 cardColor: AppTheme.figmaColor,
+                                posTop: screenHeight(context) * 1,
+                                posLeft: screenWidth(context) * 2,
                               ),
                             ),
                             SizedBox(
                                 width: screenWidth(context) * 2), // small gap
                             Expanded(
                               child: ContainerWidget(
+                                posTop: screenHeight(context) * 1,
+                                posLeft: screenWidth(context) * 2,
                                 title: 'Developer',
                                 body: '@bilalahmad',
                                 isDev: true,
@@ -195,13 +206,13 @@ class Homepage extends StatelessWidget {
               width: screenWidth(context) * 38,
               height: screenHeight(context) * 18,
               decoration: BoxDecoration(
-                color: AppTheme.picColor,
+               // color: AppTheme.picColor,
                 borderRadius: BorderRadius.circular(25),
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(25),
                 child: Image.asset(
-                  'assets/avatar.png', // Replace with your image
+                  'assets/avatar1.png', // Replace with your image
                   fit: BoxFit.cover,
                 ),
               ),

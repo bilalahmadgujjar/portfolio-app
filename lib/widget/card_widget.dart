@@ -10,6 +10,9 @@ class ContainerWidget extends StatelessWidget {
   final String icon;
   final Color cardColor;
   final bool isDev;
+  final double posLeft;
+  final double posTop;
+  final bool isGit;
 
   const ContainerWidget({
     super.key,
@@ -18,6 +21,9 @@ class ContainerWidget extends StatelessWidget {
     required this.icon,
     required this.cardColor,
     this.isDev = false,
+    required this.posLeft,
+    required this.posTop,
+    this.isGit = false,
   });
 
   @override
@@ -38,11 +44,13 @@ class ContainerWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-            SvgPicture.asset(
-                      icon,
-                      height: screenHeight(context) * 6,
-                    ),
-              SizedBox(height: screenHeight(context) * 1),
+            // SvgPicture.asset(
+            //           icon,
+            //           height: screenHeight(context) * 6,
+            //         ),
+            //   SizedBox(height: screenHeight(context) * 1),
+              SizedBox(height: screenHeight(context) * 7),
+
               text(
                 text: title,
                 textColor: isDev==true?AppTheme.githubColor: AppTheme.whiteColor,
@@ -69,6 +77,33 @@ class ContainerWidget extends StatelessWidget {
           right: screenWidth(context) * 4,
           child: SvgPicture.asset('assets/redirect.svg'),
         ),
+
+        Positioned(
+          top: posTop,
+          left: posLeft,
+          child: SvgPicture.asset(icon),
+        ),
+
+
+        isGit==true?Positioned(
+          top: screenHeight(context)*3.3,
+          left: screenWidth(context)*20,
+          child:   Container(
+            padding: EdgeInsets.symmetric(horizontal: screenWidth(context)*3,vertical: screenHeight(context)*0.3),
+            decoration: BoxDecoration(
+              color: AppTheme.whiteColor,
+              borderRadius: BorderRadius.circular(5),
+            ),
+            child: text(
+              text: 'Follow',
+              fontWeight: FontWeight.w500,
+              textColor:AppTheme.githubColor,
+              fontSize: screenWidth(context) * 3,
+            ),
+          ),
+        ):const SizedBox(),
+
+
       ],
     );
   }
