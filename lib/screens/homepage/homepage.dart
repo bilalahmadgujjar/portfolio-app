@@ -104,13 +104,13 @@ class Homepage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: screenHeight(context) * 2),
+
 
                   Expanded(
                     child: ListView(
                       padding: EdgeInsets.symmetric(
                           horizontal: screenWidth(context) * 4,
-                          vertical: screenHeight(context) * 1),
+                          vertical: screenHeight(context) * 2),
                       shrinkWrap: true,
                       children: [
                         Row(
