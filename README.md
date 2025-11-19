@@ -6,6 +6,11 @@
 
 Bilal Ahmad Portfolio
 
+# App Screenshots
+
+### Home Screen
+![Home Screen](screenshots/home.jpeg)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
