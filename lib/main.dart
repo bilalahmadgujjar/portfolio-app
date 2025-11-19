@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:portfolio/screens/homepage/homepage.dart';
-import 'package:portfolio/widget/theme/theme.dart';
 import 'package:portfolio/widget/theme/theme_color.dart';
 
 void main() {
@@ -38,8 +37,6 @@ class MyApp extends StatelessWidget {
               title: 'Portfolio',
               debugShowCheckedModeBanner: false,
               themeMode: ThemeMode.system, // auto switch based on device
-              theme: lightTheme,
-              darkTheme: darkTheme,
               home: const Homepage(),
               builder: (context, child) {
                 // Ensure responsiveness applies to all screens
