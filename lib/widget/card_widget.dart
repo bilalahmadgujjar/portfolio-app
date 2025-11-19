@@ -13,6 +13,7 @@ class ContainerWidget extends StatelessWidget {
   final double posLeft;
   final double posTop;
   final bool isGit;
+  final VoidCallback onTap;
 
   const ContainerWidget({
     super.key,
@@ -24,6 +25,7 @@ class ContainerWidget extends StatelessWidget {
     required this.posLeft,
     required this.posTop,
     this.isGit = false,
+    required this.onTap,
   });
 
   @override
@@ -31,39 +33,42 @@ class ContainerWidget extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(
-            horizontal: screenWidth(context) * 4,
-            vertical: screenHeight(context) * 2,
-          ),
-          decoration: BoxDecoration(
-            color: cardColor,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-            // SvgPicture.asset(
-            //           icon,
-            //           height: screenHeight(context) * 6,
-            //         ),
-            //   SizedBox(height: screenHeight(context) * 1),
-              SizedBox(height: screenHeight(context) * 7),
+        GestureDetector(
+          onTap: onTap,
+          child: Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(
+              horizontal: screenWidth(context) * 4,
+              vertical: screenHeight(context) * 2,
+            ),
+            decoration: BoxDecoration(
+              color: cardColor,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+              // SvgPicture.asset(
+              //           icon,
+              //           height: screenHeight(context) * 6,
+              //         ),
+              //   SizedBox(height: screenHeight(context) * 1),
+                SizedBox(height: screenHeight(context) * 7),
 
-              text(
-                text: title,
-                textColor: isDev==true?AppTheme.githubColor: AppTheme.whiteColor,
-                fontSize: screenWidth(context) * 4,
-                fontWeight: FontWeight.bold,
-              ),
-              SizedBox(height: screenHeight(context) * 0.5),
-              text(
-                text: body,
-                textColor: isDev==true?AppTheme.githubColor: AppTheme.whiteColor,
-                fontSize: screenWidth(context) * 3,
-              ),
-            ],
+                text(
+                  text: title,
+                  textColor: isDev==true?AppTheme.githubColor: AppTheme.whiteColor,
+                  fontSize: screenWidth(context) * 4,
+                  fontWeight: FontWeight.bold,
+                ),
+                SizedBox(height: screenHeight(context) * 0.5),
+                text(
+                  text: body,
+                  textColor: isDev==true?AppTheme.githubColor: AppTheme.whiteColor,
+                  fontSize: screenWidth(context) * 3,
+                ),
+              ],
+            ),
           ),
         ),
       isDev==true?

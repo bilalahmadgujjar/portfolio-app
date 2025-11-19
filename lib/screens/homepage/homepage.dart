@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/responsiveness.dart';
+import 'package:portfolio/utils/url_launcher.dart';
 import 'package:portfolio/widget/text.dart';
 
 import '../../widget/card_widget.dart';
@@ -124,6 +125,10 @@ class Homepage extends StatelessWidget {
                                 cardColor: AppTheme.emailCardColor,
                                 posTop: screenHeight(context) * 2,
                                 posLeft: screenWidth(context) * 4,
+                                onTap: ()
+                                {
+                                     launchURL('bilaltech271@gmail.com');
+                                },
                               ),
                             ),
                             SizedBox(
@@ -136,6 +141,10 @@ class Homepage extends StatelessWidget {
                                 cardColor: AppTheme.facebookColor,
                                 posTop: screenHeight(context) * 0.5,
                                 posLeft: screenWidth(context) * 1,
+                                onTap: ()
+                                {
+                                  launchURL('bilaltech271@gmail.com');
+                                },
                               ),
                             ),
                           ],
@@ -154,6 +163,10 @@ class Homepage extends StatelessWidget {
                                 posTop: screenHeight(context) * 1,
                                 posLeft: screenWidth(context) * 2,
                                 isGit: true,
+                                onTap: ()
+                                {
+                                  launchURL('https://github.com/bilalahmadgujjar');
+                                },
                               ),
                             ),
                           ],
@@ -172,6 +185,10 @@ class Homepage extends StatelessWidget {
                                 cardColor: AppTheme.figmaColor,
                                 posTop: screenHeight(context) * 1,
                                 posLeft: screenWidth(context) * 2,
+                                onTap: ()
+                                {
+
+                                },
                               ),
                             ),
                             SizedBox(
@@ -185,6 +202,10 @@ class Homepage extends StatelessWidget {
                                 isDev: true,
                                 icon: 'assets/dev.svg',
                                 cardColor: AppTheme.devColor,
+                                onTap: ()
+                                {
+
+                                },
                               ),
                             ),
                           ],
