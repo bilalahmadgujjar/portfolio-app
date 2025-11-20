@@ -13,9 +13,11 @@ class ContainerWidget extends StatelessWidget {
   final double posLeft;
   final double posTop;
   final bool isGit;
+  final bool isLinkedIn;
   final VoidCallback onTap;
 
-  const ContainerWidget({
+  const
+  ContainerWidget({
     super.key,
     required this.title,
     required this.body,
@@ -26,6 +28,7 @@ class ContainerWidget extends StatelessWidget {
     required this.posTop,
     this.isGit = false,
     required this.onTap,
+    this.isLinkedIn=false,
   });
 
   @override
@@ -86,7 +89,11 @@ class ContainerWidget extends StatelessWidget {
         Positioned(
           top: posTop,
           left: posLeft,
-          child: SvgPicture.asset(icon),
+          child: isLinkedIn==true?SvgPicture.asset(
+            height: screenHeight(context)*5,
+              icon
+
+          ):SvgPicture.asset(icon),
         ),
 
 
@@ -107,6 +114,26 @@ class ContainerWidget extends StatelessWidget {
             ),
           ),
         ):const SizedBox(),
+
+
+        isLinkedIn==true?Positioned(
+          top: screenHeight(context)*3.3,
+          left: screenWidth(context)*20,
+          child:   Container(
+            padding: EdgeInsets.symmetric(horizontal: screenWidth(context)*3,vertical: screenHeight(context)*0.3),
+            decoration: BoxDecoration(
+              color: AppTheme.whiteColor,
+              borderRadius: BorderRadius.circular(5),
+            ),
+            child: text(
+              text: 'Follow',
+              fontWeight: FontWeight.w500,
+              textColor:AppTheme.linkedInColor,
+              fontSize: screenWidth(context) * 3,
+            ),
+          ),
+        ):const SizedBox(),
+
 
 
       ],

@@ -210,6 +210,32 @@ class Homepage extends StatelessWidget {
                             ),
                           ],
                         ),
+
+                        SizedBox(
+                          height: screenHeight(context) * 1,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: ContainerWidget(
+                                title: 'Linked in',
+                                body: 'Muhammad Bilal Ahmad',
+                                icon: 'assets/linkedin.svg',
+                                cardColor: AppTheme.linkedInColor,
+                                posTop: screenHeight(context) * 2,
+                                posLeft: screenWidth(context) * 4.5,
+                                isLinkedIn:true,
+                                onTap: ()
+                                {
+                                  launchURL('https://www.linkedin.com/in/muhammad-bilal-ahmad-358a33283/');
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: screenHeight(context) * 1,
+                        ),
                       ],
                     ),
                   )

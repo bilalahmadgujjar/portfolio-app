@@ -8,6 +8,7 @@ class AppTheme {
   static Color cardColor = const Color(0xFF18213B);
   static Color emailCardColor = const Color(0xFF143061);
   static Color facebookColor = const Color(0xFF278BE4);
+  static Color linkedInColor = const Color(0xFF0A66C2);
   static Color githubColor = const Color(0xFF20212A);
   static Color figmaColor = const Color(0xFF302F2F);
   static Color devColor = const Color(0xFFEEEEEE);
