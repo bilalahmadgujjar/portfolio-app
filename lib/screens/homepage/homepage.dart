@@ -121,10 +121,12 @@ class Homepage extends StatelessWidget {
                               child: ContainerWidget(
                                 title: 'Email',
                                 body: 'bilaltech271@gmail.com',
-                                icon: 'assets/mail.svg',
+                                icon: 'assets/files/mail.png',
+                                isAssets: true,
+                                imageSize: screenHeight(context)*2.5,
                                 cardColor: AppTheme.emailCardColor,
-                                posTop: screenHeight(context) * 2,
-                                posLeft: screenWidth(context) * 4,
+                                posTop: screenHeight(context) * 1,
+                                posLeft: screenWidth(context) * 3,
                                 onTap: ()
                                 {
                                      launchURL('bilaltech271@gmail.com');
@@ -135,15 +137,17 @@ class Homepage extends StatelessWidget {
                                 width: screenWidth(context) * 2), // small gap
                             Expanded(
                               child: ContainerWidget(
+                                isAssets: true,
                                 title: 'Facebook',
+                                posTop: screenHeight(context) * 1,
+                                posLeft: screenWidth(context) * 1.5,
+                                imageSize: screenHeight(context)*1,
                                 body: '@bilalahmad',
-                                icon: 'assets/facebook.svg',
+                                icon: 'assets/files/facebook.png',
                                 cardColor: AppTheme.facebookColor,
-                                posTop: screenHeight(context) * 0.5,
-                                posLeft: screenWidth(context) * 1,
                                 onTap: ()
                                 {
-                                  launchURL('bilaltech271@gmail.com');
+                                  openFacebook();
                                 },
                               ),
                             ),
@@ -157,11 +161,13 @@ class Homepage extends StatelessWidget {
                             Expanded(
                               child: ContainerWidget(
                                 title: 'GitHub',
+                                isAssets: true,
                                 body: '@bilalahmadgujjar',
-                                icon: 'assets/git.svg',
+                                icon: 'assets/files/git.png',
                                 cardColor: AppTheme.githubColor,
-                                posTop: screenHeight(context) * 1,
-                                posLeft: screenWidth(context) * 2,
+                                posTop: screenHeight(context) * 0,
+                                posLeft: screenWidth(context) * 0,
+                                imageSize: screenHeight(context)*1.8,
                                 isGit: true,
                                 onTap: ()
                                 {
@@ -181,10 +187,12 @@ class Homepage extends StatelessWidget {
                               child: ContainerWidget(
                                 title: 'Figma',
                                 body: '@bilalahmad',
-                                icon: 'assets/figma.svg',
+                                isAssets: true,
+                                icon: 'assets/files/figma.png',
                                 cardColor: AppTheme.figmaColor,
-                                posTop: screenHeight(context) * 1,
-                                posLeft: screenWidth(context) * 2,
+                                posTop: screenHeight(context) * 0.5,
+                                posLeft: screenWidth(context) * 1,
+                                imageSize: screenHeight(context)*1,
                                 onTap: ()
                                 {
 
@@ -195,32 +203,10 @@ class Homepage extends StatelessWidget {
                                 width: screenWidth(context) * 2), // small gap
                             Expanded(
                               child: ContainerWidget(
-                                posTop: screenHeight(context) * 1,
-                                posLeft: screenWidth(context) * 2,
-                                title: 'Developer',
-                                body: '@bilalahmad',
-                                isDev: true,
-                                icon: 'assets/dev.svg',
-                                cardColor: AppTheme.devColor,
-                                onTap: ()
-                                {
-
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-
-                        SizedBox(
-                          height: screenHeight(context) * 1,
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: ContainerWidget(
                                 title: 'Linked in',
-                                body: 'Muhammad Bilal Ahmad',
-                                icon: 'assets/linkedin.svg',
+                                isAssets:false,
+                                body: '@bilalahmad',
+                                icon: '',
                                 cardColor: AppTheme.linkedInColor,
                                 posTop: screenHeight(context) * 2,
                                 posLeft: screenWidth(context) * 4.5,
@@ -233,6 +219,7 @@ class Homepage extends StatelessWidget {
                             ),
                           ],
                         ),
+
                         SizedBox(
                           height: screenHeight(context) * 1,
                         ),

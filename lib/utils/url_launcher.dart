@@ -36,3 +36,20 @@ Future<void> launchURL(String url) async {
     print("Launcher error: $e");
   }
 }
+
+
+void openFacebook() async {
+  const String fbAppUrl = 'fb://profile/100025208196283';
+  const String fbWebUrl = 'https://www.facebook.com/profile.php?id=100025208196283';
+
+  try {
+    final Uri appUri = Uri.parse(fbAppUrl);
+    if (await canLaunchUrl(appUri)) {
+      await launchUrl(appUri, mode: LaunchMode.externalApplication);
+    } else {
+      await launchUrl(Uri.parse(fbWebUrl), mode: LaunchMode.externalApplication);
+    }
+  } catch (e) {
+    print("Error: $e");
+  }
+}

@@ -9,26 +9,28 @@ class ContainerWidget extends StatelessWidget {
   final String body;
   final String icon;
   final Color cardColor;
-  final bool isDev;
+
   final double posLeft;
   final double posTop;
   final bool isGit;
   final bool isLinkedIn;
   final VoidCallback onTap;
+  final bool isAssets;
+  final double imageSize;
 
-  const
-  ContainerWidget({
+  const ContainerWidget({
     super.key,
     required this.title,
     required this.body,
     required this.icon,
     required this.cardColor,
-    this.isDev = false,
     required this.posLeft,
     required this.posTop,
     this.isGit = false,
     required this.onTap,
-    this.isLinkedIn=false,
+    this.isLinkedIn = false,
+    required this.isAssets,
+    this.imageSize=0.0,
   });
 
   @override
@@ -51,91 +53,64 @@ class ContainerWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              // SvgPicture.asset(
-              //           icon,
-              //           height: screenHeight(context) * 6,
-              //         ),
-              //   SizedBox(height: screenHeight(context) * 1),
                 SizedBox(height: screenHeight(context) * 7),
-
                 text(
                   text: title,
-                  textColor: isDev==true?AppTheme.githubColor: AppTheme.whiteColor,
+                  textColor: AppTheme.whiteColor,
                   fontSize: screenWidth(context) * 4,
                   fontWeight: FontWeight.bold,
                 ),
                 SizedBox(height: screenHeight(context) * 0.5),
                 text(
                   text: body,
-                  textColor: isDev==true?AppTheme.githubColor: AppTheme.whiteColor,
+                  textColor: AppTheme.whiteColor,
                   fontSize: screenWidth(context) * 3,
                 ),
               ],
             ),
           ),
         ),
-      isDev==true?
-      Positioned(
-        top: screenHeight(context) * 2,
-        right: screenWidth(context) * 4,
-        child: SvgPicture.asset('assets/redirect.svg',
-          colorFilter:ColorFilter.mode(AppTheme.githubColor, BlendMode.srcIn),),
-      ):Positioned(
+        Positioned(
           top: screenHeight(context) * 2,
           right: screenWidth(context) * 4,
           child: SvgPicture.asset('assets/redirect.svg'),
         ),
+        isAssets == true
+            ? Positioned(
+                top: posTop,
+                left: posLeft,
+                child: Image.asset(
+                  icon, // asset image
+                  height: screenHeight(context) *imageSize,
+                ),
+              )
+            : Positioned(
+                top: posTop,
+                left: posLeft,
+                child:  SvgPicture.asset(height: screenHeight(context) * 4, 'assets/linkedin.svg'),
+              ),
 
-        Positioned(
-          top: posTop,
-          left: posLeft,
-          child: isLinkedIn==true?SvgPicture.asset(
-            height: screenHeight(context)*5,
-              icon
-
-          ):SvgPicture.asset(icon),
-        ),
-
-
-        isGit==true?Positioned(
-          top: screenHeight(context)*3.3,
-          left: screenWidth(context)*20,
-          child:   Container(
-            padding: EdgeInsets.symmetric(horizontal: screenWidth(context)*3,vertical: screenHeight(context)*0.3),
-            decoration: BoxDecoration(
-              color: AppTheme.whiteColor,
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: text(
-              text: 'Follow',
-              fontWeight: FontWeight.w500,
-              textColor:AppTheme.githubColor,
-              fontSize: screenWidth(context) * 3,
-            ),
-          ),
-        ):const SizedBox(),
-
-
-        isLinkedIn==true?Positioned(
-          top: screenHeight(context)*3.3,
-          left: screenWidth(context)*20,
-          child:   Container(
-            padding: EdgeInsets.symmetric(horizontal: screenWidth(context)*3,vertical: screenHeight(context)*0.3),
-            decoration: BoxDecoration(
-              color: AppTheme.whiteColor,
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: text(
-              text: 'Follow',
-              fontWeight: FontWeight.w500,
-              textColor:AppTheme.linkedInColor,
-              fontSize: screenWidth(context) * 3,
-            ),
-          ),
-        ):const SizedBox(),
-
-
-
+        isGit == true
+            ? Positioned(
+                top: screenHeight(context) * 3.3,
+                left: screenWidth(context) * 20,
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: screenWidth(context) * 3,
+                      vertical: screenHeight(context) * 0.3),
+                  decoration: BoxDecoration(
+                    color: AppTheme.whiteColor,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: text(
+                    text: 'Follow',
+                    fontWeight: FontWeight.w500,
+                    textColor: AppTheme.githubColor,
+                    fontSize: screenWidth(context) * 3,
+                  ),
+                ),
+              )
+            : const SizedBox(),
       ],
     );
   }
