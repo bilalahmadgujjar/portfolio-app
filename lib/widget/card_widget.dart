@@ -35,12 +35,12 @@ class ContainerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        GestureDetector(
-          onTap: onTap,
-          child: Container(
+    return GestureDetector(
+      onTap: onTap,
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(
               horizontal: screenWidth(context) * 4,
@@ -69,49 +69,49 @@ class ContainerWidget extends StatelessWidget {
               ],
             ),
           ),
-        ),
-        Positioned(
-          top: screenHeight(context) * 2,
-          right: screenWidth(context) * 4,
-          child: SvgPicture.asset('assets/redirect.svg'),
-        ),
-        isAssets == true
-            ? Positioned(
-                top: posTop,
-                left: posLeft,
-                child: Image.asset(
-                  icon, // asset image
-                  height: screenHeight(context) *imageSize,
+          Positioned(
+            top: screenHeight(context) * 2,
+            right: screenWidth(context) * 4,
+            child: SvgPicture.asset('assets/redirect.svg'),
+          ),
+          isAssets == true
+              ? Positioned(
+                  top: posTop,
+                  left: posLeft,
+                  child: Image.asset(
+                    icon, // asset image
+                    height: screenHeight(context) *imageSize,
+                  ),
+                )
+              : Positioned(
+                  top: posTop,
+                  left: posLeft,
+                  child:  SvgPicture.asset(height: screenHeight(context) * 4, 'assets/linkedin.svg'),
                 ),
-              )
-            : Positioned(
-                top: posTop,
-                left: posLeft,
-                child:  SvgPicture.asset(height: screenHeight(context) * 4, 'assets/linkedin.svg'),
-              ),
 
-        isGit == true
-            ? Positioned(
-                top: screenHeight(context) * 3.3,
-                left: screenWidth(context) * 20,
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: screenWidth(context) * 3,
-                      vertical: screenHeight(context) * 0.3),
-                  decoration: BoxDecoration(
-                    color: AppTheme.whiteColor,
-                    borderRadius: BorderRadius.circular(5),
+          isGit == true
+              ? Positioned(
+                  top: screenHeight(context) * 3.3,
+                  left: screenWidth(context) * 20,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: screenWidth(context) * 3,
+                        vertical: screenHeight(context) * 0.3),
+                    decoration: BoxDecoration(
+                      color: AppTheme.whiteColor,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: text(
+                      text: 'Follow',
+                      fontWeight: FontWeight.w500,
+                      textColor: AppTheme.githubColor,
+                      fontSize: screenWidth(context) * 3,
+                    ),
                   ),
-                  child: text(
-                    text: 'Follow',
-                    fontWeight: FontWeight.w500,
-                    textColor: AppTheme.githubColor,
-                    fontSize: screenWidth(context) * 3,
-                  ),
-                ),
-              )
-            : const SizedBox(),
-      ],
+                )
+              : const SizedBox(),
+        ],
+      ),
     );
   }
 }

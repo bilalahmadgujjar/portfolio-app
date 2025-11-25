@@ -18,7 +18,7 @@ class Homepage extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(
                 horizontal: screenWidth(context) * 4,
-                vertical: screenHeight(context) * 2),
+                vertical: screenHeight(context) * 2).copyWith(bottom: 0),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
@@ -45,7 +45,7 @@ class Homepage extends StatelessWidget {
                         horizontal: screenWidth(context) * 4,
                         vertical: screenHeight(context) * 2),
                     decoration: BoxDecoration(
-                      color: AppTheme.cardColor.withOpacity(0.4),
+                      color:Color(0xFF2C3955).withOpacity(0.4),
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: Column(
@@ -63,7 +63,7 @@ class Homepage extends StatelessWidget {
                         SizedBox(height: screenHeight(context) * 0.5),
                         Center(
                           child: text(
-                            text: '@bilalahmad',
+                            text: 'Flutter Developer',
                             textColor: AppTheme.darkTextColor,
                             fontSize: screenWidth(context) * 4,
                           ),
@@ -89,13 +89,13 @@ class Homepage extends StatelessWidget {
                               textColor: AppTheme.darkTextColor,
                               fontSize: screenWidth(context) * 3.5,
                             ),
-                            SizedBox(width: screenWidth(context) * 3),
+                            SizedBox(width: screenWidth(context) * 4),
                             Icon(Icons.calendar_month,
                                 color: AppTheme.darkTextColor,
                                 size: screenWidth(context) * 4.5),
                             SizedBox(width: screenWidth(context) * 1.5),
                             text(
-                              text: 'Joined on July 28, 2024',
+                              text: 'Since 18 July 2024',
                               textColor: AppTheme.darkTextColor,
                               fontSize: screenWidth(context) * 3.5,
                             ),
@@ -220,9 +220,6 @@ class Homepage extends StatelessWidget {
                           ],
                         ),
 
-                        SizedBox(
-                          height: screenHeight(context) * 1,
-                        ),
                       ],
                     ),
                   )

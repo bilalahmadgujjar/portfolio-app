@@ -3,8 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:portfolio/screens/homepage/homepage.dart';
 import 'package:portfolio/widget/theme/theme_color.dart';
 
-void main() {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
   /// Set proper edge-to-edge display mode
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   runApp(const MyApp());
