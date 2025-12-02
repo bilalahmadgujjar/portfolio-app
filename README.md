@@ -8,8 +8,7 @@ Bilal Ahmad Portfolio
 
 # App Screenshots
 
-### Home Screen
-![Home Screen](screenshots/home.jpeg)
+
 
 ### Full Images
 ![Full Screen](screenshots/full.png)
